@@ -59,6 +59,7 @@
   "files.associations": {
     "*.embeddedhtml": "html",
     "*.php": "php",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "valarray": "cpp"
   }
 }
