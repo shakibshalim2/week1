@@ -60,6 +60,7 @@
     "*.embeddedhtml": "html",
     "*.php": "php",
     "iostream": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "ostream": "cpp"
   }
 }
