@@ -1,38 +1,33 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t;
-    cin>>t;
-    while(int i=0;i<t;i++){
-        int n;
-        cin>>n;
-        string a[3][n];
-        for(int i=0;i<3;i++){
-            for(int j=0;j<n;j++){
-                cin>>a[i][j];
-            }
-        }
-        unordered_map<string,int>f;
-        for(int i=0;i<3;i++){
-            for(int j=0;j<n;j++){
-                f[a[i][j]]++;
-            }
-        }
-        for(int i=0;i<3;i++){
-            int points=0;
-            for(int j=0;j<n;j++){
-                if(f[a[i][j]]==1){
-                    points+=3;
-                }
-                else if(f[a[i][j]]==2){
-                    points+=1;
-                }
-            }
-            cout<<points<<" ";
-        }
-        cout<<"\n";
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<int> a(n), b(m);
+    for (int i = 0; i < n; ++i) {
+        cin >> a[i];
+    }
+    for (int i = 0; i < m; ++i) {
+        cin >> b[i];
     }
 
+    int count = 0;
+    int i = 0, j = 0;
+
+    while (i < n && j < m) {
+        if (a[i] == b[j]) {
+            count += (i+1);  // Increment by i + 1
+            ++i;
+        }  else {
+            ++j;
+        }
+    }
+
+    cout << count << endl;
+
+    return 0;
 }
