@@ -10,29 +10,24 @@ for(int i=0;i<n;i++){
 for(int i=0;i<m;i++){
     cin>>b[i];
 }
-int cnt=0;
+long long cnt=0;
 int i=0,j=0;
 while(i<n&&j<m){
-    if(a[i]==b[j]){
-        int aCount=1,bCount=1;
-        while(i+1<n&&a[i+1]==a[i]){
+        int aCount=0,bCount=0;
+        int c=a[i];
+        while(i<n&&a[i]==c){
             aCount++;
             i++;
         }
-        while(j+1<m&&b[j+1]==b[j]){
+        while(c>b[j]&&j<m){
+            j++;
+        }
+        while(j<m&&b[j]==c){
             bCount++;
             j++;
         }
         cnt+=aCount*bCount;
-        i++;
-        j++;
     }
-    else if(a[i]<b[j]){
-        i++;
-    }
-    else{
-        j++;
-    }
-}
-    cout<<cnt;
+    cout<<cnt<<"\n";
+    return 0;
 }
